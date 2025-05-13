@@ -1,0 +1,286 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+body {
+  color: #333;
+  line-height: 1.6;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gallery {
+  flex: 1;
+  min-width: 300px;
+}
+.main-image {
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 5px;
+}
+.main-image img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  overflow-x: auto;
+  padding: 5px 0;
+}
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  object-fit: cover;
+}
+.thumbnails img:hover {
+  border-color: #333;
+}
+.details {
+  flex: 1;
+  min-width: 300px;
+}
+.rating {
+  color: #f8c000;
+  margin-bottom: 10px;
+}
+.rating span:last-child {
+  color: #666;
+  font-size: 14px;
+  margin-left: 5px;
+}
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #d04000;
+}
+.variants {
+  margin: 20px 0;
+}
+.variants label {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.color-options {
+  margin-bottom: 15px;
+}
+.color-options button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin: 5px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.color-options button:hover {
+  border-color: #000;
+}
+.size-options select, button {
+  margin: 5px 0;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.size-options select {
+  border: 1px solid #ccc;
+}
+.primary-btn {
+  background-color: #4a7aff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+.primary-btn:hover {
+  background-color: #3a67cc;
+}
+.add-to-cart {
+  margin: 15px 0;
+}
+.bundle {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 15px;
+}
+.bundle h3 {
+  margin-bottom: 10px;
+  color: #444;
+}
+.bundle-items {
+  margin: 10px 0;
+}
+.bundle .item {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+.bundle p {
+  font-weight: bold;
+  margin: 10px 0;
+}
+.bundle button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.bundle button:hover {
+  background-color: #e0e0e0;
+}
+.tabs {
+  margin-top: 25px;
+  border-bottom: 1px solid #ccc;
+}
+.tabs button {
+  margin-right: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  top: 1px;
+}
+.tabs button.active {
+  background: white;
+  border-bottom: 1px solid white;
+}
+.tab-content {
+  margin-top: 15px;
+  padding: 10px 0;
+}
+.tab-content ul {
+  padding-left: 20px;
+}
+.tab-content li {
+  margin-bottom: 5px;
+}
+.tab-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tab-content table th, .tab-content table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+.tab-content table th {
+  background-color: #f5f5f5;
+}
+.recommendations, .related {
+  margin: 30px 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+.recommendations h2, .related h2 {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+}
+.card, .product-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  min-width: 150px;
+  border-radius: 5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover, .product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+.related .product-card img {
+  max-width: 150px;
+  max-height: 120px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 999;
+}
+.recommendations .card img {
+  max-width: 140px;
+  max-height: 110px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 12px;
+}
+.card p, .product-card p {
+  text-align: center;
+  margin: 8px 0;
+  font-weight: bold;
+}
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 25px;
+  display: none;
+  z-index: 1000;
+  max-width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.modal button {
+  float: right;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .gallery, .details {
+    width: 100%;
+  }
+}
+
+/* Style improvements for buttons */
+button {
+  cursor: pointer;
+}

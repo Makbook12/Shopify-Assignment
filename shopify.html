@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Watch - Product Page</title>
+  <link rel="stylesheet" href="shopify.css" />
+  <meta name="description" content="Luxury Watch - Premium timepiece for all occasions" />
+</head>
+<body>
+  <div class="container">
+    <!-- Product Gallery -->
+    <div class="gallery">
+      <div class="main-image">
+        <img id="mainImg" src="https://img.tatacliq.com/images/i18//1316Wx1468H/MP000000021676957_1316Wx1468H_202406301654031.jpeg" alt="Main Product" />
+      </div>
+      <div class="thumbnails">
+        <img src="https://img.tatacliq.com/images/i18//1316Wx1468H/MP000000021676957_1316Wx1468H_202406301654031.jpeg" onclick="updateMainImage(this.src)" alt="Watch front view" />
+        <img src="https://img.tatacliq.com/images/i18//1316Wx1468H/MP000000021676957_1316Wx1468H_202406301654112.jpeg" onclick="updateMainImage(this.src)" alt="Watch side view" />
+        <img src="https://img.tatacliq.com/images/i18//658Wx734H/MP000000021676957_658Wx734H_202406301654133.jpeg" onclick="updateMainImage(this.src)" alt="Watch back view" />
+        <img src="https://img.tatacliq.com/images/i18//1316Wx1468H/MP000000021676957_1316Wx1468H_202406301654064.jpeg" onclick="updateMainImage(this.src)" alt="Watch strap detail" />
+        <img src="https://img.tatacliq.com/images/i18//1316Wx1468H/MP000000021676957_1316Wx1468H_202406301654095.jpeg" onclick="updateMainImage(this.src)" alt="Watch face detail" />
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="details">
+      <h1>Luxury Watch</h1>
+      <div class="rating">
+        <span>★★★★★</span>
+        <span>(24 reviews)</span>
+      </div>
+      <p class="price">$599.99</p>
+
+      <!-- Product Variants -->
+      <div class="variants">
+        <div class="color-options">
+          <label>Color:</label>
+          <button class="color" style="background:gold" onclick="selectColor('Gold')"></button>
+          <button class="color" style="background:silver" onclick="selectColor('Silver')"></button>
+          <span id="selectedColor"></span>
+        </div>
+        <div class="size-options">
+          <label for="size">Size:</label>
+          <select id="size" onchange="selectSize(this.value)">
+            <option value="S">Small</option>
+            <option value="L" selected>Large</option>
+            <option value="XL">Extra Large</option>
+          </select>
+          <span id="selectedSize"></span>
+          <button onclick="openSizeChart()">Size Chart</button>
+        </div>
+      </div>
+
+      <!-- Add to Cart Button -->
+      <div class="add-to-cart">
+        <button class="primary-btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+
+      <!-- Compare Colours -->
+      <button onclick="openCompareColours()">Compare Colours</button>
+
+      <!-- Bundle Section -->
+      <div class="bundle">
+        <h3>Buy These Together</h3>
+        <div class="bundle-items">
+          <div class="item">Watch Strap - $50</div>
+          <div class="item">Watch Dials - $40</div>
+        </div>
+        <p>Total: $90</p>
+        <button>Add Bundle to Cart</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button onclick="showTab('desc')" class="active">Description</button>
+        <button onclick="showTab('info')">Product Info</button>
+        <button onclick="showTab('ship')">Shipping</button>
+      </div>
+      <div id="desc" class="tab-content">
+        <p>A watch is a portable timepiece, either worn on the wrist or carried in a pocket, designed to display the time. It typically features a face with hands or a digital display, indicating hours, minutes, and sometimes seconds.</p>
+        <p>This luxury watch features premium materials including a sapphire crystal face, stainless steel case, and precision movement for accurate timekeeping.</p>
+      </div>
+      <div id="info" class="tab-content" style="display:none">
+        <table>
+          <tr><th>Case Material</th><td>Stainless Steel</td></tr>
+          <tr><th>Movement</th><td>Automatic</td></tr>
+          <tr><th>Water Resistance</th><td>100m</td></tr>
+          <tr><th>Warranty</th><td>2 Years</td></tr>
+        </table>
+      </div>
+      <div id="ship" class="tab-content" style="display:none">
+        <ul>
+          <li><strong>Free Shipping</strong> on orders over $800</li>
+          <li>Standard delivery in 3-5 business days</li>
+          <li>Express delivery available at checkout</li>
+          <li>Track your order in your account dashboard</li>
+        </ul>
+      </div>
+      <!--Total Price-->
+      <div class="tab-content" id="total" style="display: none;">
+        <h2>Combined Total Price</h2>
+        <ul id="cart-list"></ul>
+        <strong id="cart-total">Total: $0.00</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pair Well With -->
+  <div class="recommendations">
+    <h2>Pair Well With</h2>
+    <div class="scroll-row">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRHxlItDXZmFYpQVowehfCTlB4pJ755KHDmg&s" alt="Suits">
+        <p>Suits</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvw9x77xaZQEsrPVy7cZwHf82we7jMlU52oQ&s" alt="Shirts">
+        <p>Shirts</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/564x/cc/23/c9/cc23c9006b7ff68370c468abc9561f30.jpg" alt="Bracelets">
+        <p>Bracelets</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <div class="related">
+    <h2>Related Products</h2>
+    <div class="grid">
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/714xTEuG+uL._AC_UY1100_.jpg" alt="Watch Straps">
+        <p>Watch Straps</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dwda7dfd6a/images/Titan/Catalog/90140TM01_1.jpg?sw=800&sh=800" alt="Watch Dials">
+        <p>Watch Dials</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="https://cdn4.ethoswatches.com/the-watch-guide/wp-content/uploads/2014/08/mobile-mast1.jpg" alt="Watch Machines">
+        <p>Watch Machines</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modals -->
+  <div id="modalOverlay" class="modal-overlay" onclick="closeModal()"></div>
+  <div id="sizeChartModal" class="modal">
+    <button onclick="closeModal()">X</button>
+    <table>
+      <tr><th>Size</th><th>Dial Diameter</th></tr>
+      <tr><td>S</td><td>26-30 mm</td></tr>
+      <tr><td>L</td><td>32-38 mm</td></tr>
+      <tr><td>XL</td><td>40-46 mm</td></tr>
+    </table>
+  </div>
+  <div id="compareModal" class="modal">
+    <button onclick="closeModal()">X</button>
+    <div style="display: flex; gap: 10px; justify-content: center;">
+      <div>
+        <img src="https://img.tatacliq.com/images/i18//1316Wx1468H/MP000000021676957_1316Wx1468H_202406301654147.jpeg" alt="Gold" style="width: 100px; height: 100px; object-fit: cover;">
+        <p style="text-align:center">Gold</p>
+      </div>
+      <div>
+        <img src="https://img.piaget.com/alternate-product-tile-2xl-5/o-dpr-2/4ccabf44469ffc488a66f52299f0aaf2e1335979.jpg" alt="Silver" style="width: 100px; height: 100px; object-fit: cover;">
+        <p style="text-align:center">Silver</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="shopify.js"></script>
+</body>
+</html>
